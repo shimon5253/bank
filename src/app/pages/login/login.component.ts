@@ -10,7 +10,7 @@ import { Route, Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private db:DbService, private ccc:Router) { }
+  constructor(private db:DbService, private MyRouterService:Router) { }
 
   ngOnInit() {
   }
@@ -18,10 +18,14 @@ export class LoginComponent implements OnInit {
   login(u:HTMLInputElement, p:HTMLInputElement):void{
     let bu:BankUser = this.db.login(u.value, p.value)
     if ( ! bu){
-      alert('eror')
+      alert('error')
     }else{
-      this.ccc.navigateByUrl('/summary/'+bu.id)
+      this.MyRouterService.navigateByUrl('/summary/'+bu.id)
     }
   }
+
+  register(){
+    this.MyRouterService.navigateByUrl('/register/');
+}
 
 }

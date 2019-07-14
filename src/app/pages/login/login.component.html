@@ -1,4 +1,10 @@
 <p>login works!</p>
-<label>user:</label><input #user/><br>
-<label>pass:</label><input #pass/><br>
-<button type="button" (click)="login(user , pass)">login</button>
+<div class="login">
+    <label>user:</label><input #user/><br>
+    <label>pass:</label><input #pass/><br>
+    <button type="button" (click)="login(user , pass)">login</button>
+    <br><hr>
+    <p>Or you want to create an account</p>
+    <button type="button" (click)="register()">register</button>
+</div>
+
